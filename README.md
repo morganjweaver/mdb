@@ -10,8 +10,8 @@ To build with make, type `make all`
 
 ## To modify for your system:
 
-  *modify CMakeList to include your sql-parser directory and bdb directories
-  *then rebuild with `cmake -G "Unix Makefiles" .`
+  * modify CMakeList to include your sql-parser directory and bdb directories
+  * then rebuild with `cmake -G "Unix Makefiles" .`
 
 ## Usage:
 
