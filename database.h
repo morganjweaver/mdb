@@ -9,12 +9,13 @@ namespace mdb {
 
     public:
 
-        Database(std::string dir_name, std::string db_name);
+        Database(std::string dir_name);
 
-        int InitializeDB(std::string path);
+        bool InitializeDB();
+        void printDBInfo();
 
     private:
-        std::string db_name = "";
+
         std::string dir_name = "";
 //const char *HOME = "cpsc4300_5300/data";
 //const char *EXAMPLE = "example.db";
