@@ -1,2 +1,4 @@
 cmake-build-*
 .DS_Store
+CMakeFiles/*.dir
+sql_interpreter
