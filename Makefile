@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/Cellar/cmake/3.7.2/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/Cellar/cmake/3.7.2/bin/cmake -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/morganjweaver/ClionProjects/mdb
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/Cellar/cmake/3.7.2/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -69,8 +69,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/local/Cellar/cmake/3.7.2/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -123,33 +123,6 @@ sql_interpreter/fast:
 	$(MAKE) -f CMakeFiles/sql_interpreter.dir/build.make CMakeFiles/sql_interpreter.dir/build
 .PHONY : sql_interpreter/fast
 
-SQLprinter.o: SQLprinter.cpp.o
-
-.PHONY : SQLprinter.o
-
-# target to build an object file
-SQLprinter.cpp.o:
-	$(MAKE) -f CMakeFiles/sql_interpreter.dir/build.make CMakeFiles/sql_interpreter.dir/SQLprinter.cpp.o
-.PHONY : SQLprinter.cpp.o
-
-SQLprinter.i: SQLprinter.cpp.i
-
-.PHONY : SQLprinter.i
-
-# target to preprocess a source file
-SQLprinter.cpp.i:
-	$(MAKE) -f CMakeFiles/sql_interpreter.dir/build.make CMakeFiles/sql_interpreter.dir/SQLprinter.cpp.i
-.PHONY : SQLprinter.cpp.i
-
-SQLprinter.s: SQLprinter.cpp.s
-
-.PHONY : SQLprinter.s
-
-# target to generate assembly for a file
-SQLprinter.cpp.s:
-	$(MAKE) -f CMakeFiles/sql_interpreter.dir/build.make CMakeFiles/sql_interpreter.dir/SQLprinter.cpp.s
-.PHONY : SQLprinter.cpp.s
-
 database.o: database.cpp.o
 
 .PHONY : database.o
@@ -176,6 +149,33 @@ database.s: database.cpp.s
 database.cpp.s:
 	$(MAKE) -f CMakeFiles/sql_interpreter.dir/build.make CMakeFiles/sql_interpreter.dir/database.cpp.s
 .PHONY : database.cpp.s
+
+heap_storage.o: heap_storage.cpp.o
+
+.PHONY : heap_storage.o
+
+# target to build an object file
+heap_storage.cpp.o:
+	$(MAKE) -f CMakeFiles/sql_interpreter.dir/build.make CMakeFiles/sql_interpreter.dir/heap_storage.cpp.o
+.PHONY : heap_storage.cpp.o
+
+heap_storage.i: heap_storage.cpp.i
+
+.PHONY : heap_storage.i
+
+# target to preprocess a source file
+heap_storage.cpp.i:
+	$(MAKE) -f CMakeFiles/sql_interpreter.dir/build.make CMakeFiles/sql_interpreter.dir/heap_storage.cpp.i
+.PHONY : heap_storage.cpp.i
+
+heap_storage.s: heap_storage.cpp.s
+
+.PHONY : heap_storage.s
+
+# target to generate assembly for a file
+heap_storage.cpp.s:
+	$(MAKE) -f CMakeFiles/sql_interpreter.dir/build.make CMakeFiles/sql_interpreter.dir/heap_storage.cpp.s
+.PHONY : heap_storage.cpp.s
 
 main.o: main.cpp.o
 
@@ -213,12 +213,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... sql_interpreter"
-	@echo "... SQLprinter.o"
-	@echo "... SQLprinter.i"
-	@echo "... SQLprinter.s"
 	@echo "... database.o"
 	@echo "... database.i"
 	@echo "... database.s"
+	@echo "... heap_storage.o"
+	@echo "... heap_storage.i"
+	@echo "... heap_storage.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
